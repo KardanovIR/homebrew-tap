@@ -1,0 +1,23 @@
+name: Test formula
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  install:
+    name: brew install on clean macOS
+    runs-on: macos-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - name: Link checkout as the tap and install
+        run: |
+          mkdir -p "$(brew --repo)/Library/Taps/kardanovir"
+          ln -s "$PWD" "$(brew --repo)/Library/Taps/kardanovir/homebrew-tap"
+          brew install kardanovir/tap/agstatus
+      - name: Smoke test
+        run: |
+          agstatus help
+          brew test kardanovir/tap/agstatus
