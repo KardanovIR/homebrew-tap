@@ -1,8 +1,8 @@
 class Agstatus < Formula
   desc "Live status board + push alerts for your coding agents (Claude Code, Codex)"
   homepage "https://agstatus.online"
-  url "https://registry.npmjs.org/agstatus/-/agstatus-1.2.0.tgz"
-  sha256 "71bb8d2fcce909d3568147503f4a4e7f4118978adb66fdd1f5e58d36d261ae70"
+  url "https://registry.npmjs.org/agstatus/-/agstatus-1.3.0.tgz"
+  sha256 "30941eca5b728657ee219d9007ff9dcf875f5e16192dbda7dbd762c771a0d084"
   license "MIT"
 
   depends_on "node"
